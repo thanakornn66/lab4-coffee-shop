@@ -4,19 +4,12 @@ let bodyParser = require('body-parser')
 const app = express()
 
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({ extended: true }))
 
-// เรียกใช้ routes โดยส่ง app เข้าไป
+// เรียกใช้ routes.js โดยส่ง app เข้าไป
 require('./routes')(app)
 
-app.get('/status', function (req, res) {
-    res.send('Hello nodejs server')
-})
-
-app.get('/hello/:person', function (req, res) {
-    console.log('hello - ' + req.params.person)
-    res.send('sey hello with ' + req.params.person)
-})
+// ไม่ต้องมี route อื่นแล้วตาม Lab5
 
 let port = 8081
 
