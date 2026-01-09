@@ -16,26 +16,27 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     // ---------- User Routes ----------
-    {
-      path: '/users',
-      name: 'users',
-      component: UserIndex
-    },
-    {
-      path: '/user/create',
-      name: 'user-create',
-      component: UserCreate
-    },
-    {
-      path: '/user/edit',
-      name: 'user-edit',
-      component: UserEdit
-    },
-    {
-      path: '/user',
-      name: 'user',
-      component: UserShow
-    },
+{
+  path: '/users',
+  name: 'users',
+  component: UserIndex
+},
+{
+  path: '/user/create',
+  name: 'user-create',
+  component: UserCreate
+},
+{
+  path: '/user/edit/:id',
+  name: 'user-edit',
+  component: UserEdit
+},
+{
+  path: '/user/:id',
+  name: 'user-show',
+  component: UserShow
+},
+
 
      // --- Menu Routes ---
     {  
