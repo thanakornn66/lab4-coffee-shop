@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+// ===== Auth =====
+import Login from '@/components/Login.vue'
+
 // ===== Users =====
 import UserIndex from '../components/Users/Index.vue'
 import UserCreate from '../components/Users/CreateUser.vue'
@@ -16,11 +19,19 @@ import MenuShow from '../components/Menus/ShowMenu.vue'
 import CoffeeIndex from '../components/coffees/index.vue'
 import CoffeeCreate from '../components/coffees/CreateCoffee.vue'
 import CoffeeEdit from '../components/coffees/EditCoffee.vue'
-import CoffeeShow from '../components/coffees/ShowCoffee.vue'   // ⭐ เพิ่มบรรทัดนี้
+import CoffeeShow from '../components/coffees/ShowCoffee.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+
+    // ---------- Auth Routes ----------
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
+
     // ---------- User Routes ----------
     {
       path: '/users',
@@ -82,7 +93,7 @@ const router = createRouter({
       component: CoffeeEdit
     },
     {
-      path: '/coffee/:coffeeId',          // ⭐ เพิ่ม route ดูรายละเอียด
+      path: '/coffee/:coffeeId',
       name: 'coffee-show',
       component: CoffeeShow
     }
