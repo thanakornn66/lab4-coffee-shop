@@ -13,12 +13,21 @@ import MenuEdit from '../components/Menus/EditMenu.vue'
 import MenuShow from '../components/Menus/ShowMenu.vue'
 
 // ===== Coffees =====
-import CoffeeIndex from '../components/coffees/index.vue'
-import CoffeeCreate from '../components/coffees/CreateCoffee.vue'
-import CoffeeEdit from '../components/coffees/EditCoffee.vue'
-import CoffeeShow from '../components/coffees/ShowCoffee.vue'   // ⭐ เพิ่มบรรทัดนี้
+import CoffeeIndex from '../components/Coffees/Index.vue'
+import CoffeeCreate from '../components/Coffees/CreateCoffee.vue'
+import CoffeeEdit from '../components/Coffees/EditCoffee.vue'
+import CoffeeShow from '../components/Coffees/ShowCoffee.vue'
 
-// ===== Coffees =====//
+// ===== Orders (เพิ่มตามโจทย์) =====
+import OrderIndex from '../components/Orders/Index.vue'
+
+// ===== Blogs (ตามอาจารย์) =====
+import BlogIndex from '../components/Blogs/Index.vue'
+import BlogCreate from '../components/Blogs/CreateBlog.vue'
+import BlogEdit from '../components/Blogs/EditBlog.vue'
+import BlogShow from '../components/Blogs/ShowBlog.vue'
+
+// ===== Login =====
 import Login from '../components/Users/Login.vue'
 
 const router = createRouter({
@@ -36,12 +45,12 @@ const router = createRouter({
       component: UserCreate
     },
     {
-      path: '/user/edit/:id',
+      path: '/user/edit/:userId',
       name: 'user-edit',
       component: UserEdit
     },
     {
-      path: '/user/:id',
+      path: '/user/:userId',
       name: 'user-show',
       component: UserShow
     },
@@ -85,16 +94,46 @@ const router = createRouter({
       component: CoffeeEdit
     },
     {
-      path: '/coffee/:coffeeId',          // ⭐ เพิ่ม route ดูรายละเอียด
+      path: '/coffee/:coffeeId',
       name: 'coffee-show',
       component: CoffeeShow
     },
-    {
-    path: '/login',
-    name: 'login',
-    component: Login
-}
 
+    // ---------- Order Routes (Lab 10) ----------
+    {
+      path: '/orders',
+      name: 'orders',
+      component: OrderIndex
+    },
+
+    // ---------- Blog Routes ----------
+    {
+      path: '/blogs',
+      name: 'blogs',
+      component: BlogIndex
+    },
+    {
+      path: '/blog/create',
+      name: 'blog-create',
+      component: BlogCreate
+    },
+    {
+      path: '/blog/edit/:blogId',
+      name: 'blog-edit',
+      component: BlogEdit
+    },
+    {
+      path: '/blog/:blogId',
+      name: 'blog-show',
+      component: BlogShow
+    },
+
+    // ---------- Login ----------
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    }
   ]
 })
 
