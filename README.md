@@ -1,3 +1,3 @@
 # nv-webblog68
-Nuttakit Ninboot
+Thanakorn Nakphook
 CSIT
