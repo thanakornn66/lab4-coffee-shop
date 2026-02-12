@@ -1,6 +1,7 @@
 <template>
   <div class="coffee-navbar">
     <ul class="nav">
+
       <!-- เมนูกาแฟ (ทุกคนเห็น) -->
       <li>
         <router-link to="/coffees">
@@ -8,10 +9,23 @@
         </router-link>
       </li>
 
-      <!-- Order (ถ้ามี route ก็ใช้ได้เลย) -->
+      <!-- Order -->
       <li>
         <router-link to="/orders">
           Order
+        </router-link>
+      </li>
+
+      <!-- แสดงเมื่อ Login แล้ว -->
+      <li v-if="isLoggedIn">
+        <router-link to="/blogs">
+          Blog
+        </router-link>
+      </li>
+
+      <li v-if="isLoggedIn">
+        <router-link to="/users">
+          User
         </router-link>
       </li>
 
@@ -28,6 +42,7 @@
           Logout
         </a>
       </li>
+
     </ul>
 
     <div class="clearfix"></div>
@@ -57,7 +72,7 @@ export default {
 
 <style scoped>
 .coffee-navbar {
-  background-color: #6f4e37; /* น้ำตาลกาแฟ ☕ */
+  background-color: #6f4e37;
   width: 100%;
   padding: 10px 0;
 }
