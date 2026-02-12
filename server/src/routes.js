@@ -2,6 +2,8 @@ const isAuthenController = require('./controllers/isAuthenController')
 const UserController = require('./controllers/UserController')
 const UserAuthenController = require('./controllers/UserAuthenController')
 const BlogController = require('./controllers/BlogController')
+const CoffeeController = require('./controllers/CoffeeController')
+
 // const UploadController = require('./controllers/UploadController')
 // const fileUploadMiddleware = require('./middleware/fileUpload') // Import Middleware
 
@@ -32,4 +34,12 @@ module.exports = (app) => {
 
   // get all blog
   app.get('/blogs', BlogController.index)
+
+  // coffee route
+app.post('/coffee', CoffeeController.create)
+app.put('/coffee/:coffeeId', CoffeeController.put)
+app.delete('/coffee/:coffeeId', CoffeeController.remove)
+app.get('/coffee/:coffeeId', CoffeeController.show)
+app.get('/coffees', CoffeeController.index)
+
 }
